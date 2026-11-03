@@ -85,7 +85,7 @@ docker compose exec laravel-api php artisan cache:clear
 Шаг 6 обязателен. `migrate:fresh --seed` пересоздаёт товары с новыми id, но кеш
 каталога живёт 5 минут (`ProductService::CACHE_TTL = 300`), и без очистки
 добавление в корзину падает с `422 The selected product id is invalid`. Это
-воспроизводимый дефект, описан в [BUGS.md](BUGS.md#bug-06).
+воспроизводимый дефект, описан в [BUGS.md](BUGS.md).
 
 Приложение готово, когда:
 
