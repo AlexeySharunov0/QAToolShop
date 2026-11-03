@@ -1,0 +1,13 @@
+BUG-02 - stock after an order larger than the seeded quantity
+
+Seed: Washers stock = 25 (database/seeders/ProductSeeder.php).
+Action: add 26 x Washers to the cart and create the order (API accepted both, see BUG-02.json).
+The stock is decremented by the queued App\Jobs\UpdateProductInventory job, so the check was
+made after the scheduler ran queue:work.
+
+Command:
+  docker compose exec laravel-api php artisan tinker \
+    --execute="echo App\Models\Product::where('name','Washers')->value('stock');"
+
+Observed: Washers stock: -1
+Expected: the order is rejected, or at least the stock never becomes negative.

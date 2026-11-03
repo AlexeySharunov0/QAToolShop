@@ -1,0 +1,29 @@
+{
+  "title": "Cart and order accept more units than are in stock",
+  "observedAt": "2026-11-03T21:25:17.291Z",
+  "environment": {
+    "apiUrl": "http://localhost:8091",
+    "sprint": "sprint5"
+  },
+  "product": {
+    "id": "01M6HMTN466EPWT1X68J25PVSG",
+    "name": "Washers",
+    "in_stock": true,
+    "price": 3.55
+  },
+  "seededStock": 25,
+  "requestedQuantity": 26,
+  "cartId": "01m6hmtpa8tkdyrc5smax7q5kz",
+  "addToCart": {
+    "status": 200,
+    "body": {
+      "result": "item added or updated"
+    }
+  },
+  "createOrder": {
+    "status": 201,
+    "invoice_number": "INV-2026000005",
+    "total": 92.3
+  },
+  "expected": "add-to-cart or checkout rejected with 4xx"
+}

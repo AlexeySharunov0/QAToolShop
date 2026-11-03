@@ -1,0 +1,15 @@
+{
+  "title": "An empty cart can be turned into an order with total 0",
+  "observedAt": "2026-11-03T21:25:17.291Z",
+  "environment": {
+    "apiUrl": "http://localhost:8091",
+    "sprint": "sprint5"
+  },
+  "cartId": "01m6hmtpg8xxrja6qgjw9a7a8b",
+  "createOrder": {
+    "status": 201,
+    "invoice_number": "INV-2026000006",
+    "total": 0
+  },
+  "expected": "checkout rejected with 4xx because the cart has no items"
+}

@@ -1,0 +1,7 @@
+TC-30 - account lockout after failed logins (manual verification, dedicated throw-away user)
+
+POST /users/login with a wrong password, attempt 1: 401 {"error":"Unauthorized"}
+POST /users/login with a wrong password, attempt 2: 401 {"error":"Unauthorized"}
+POST /users/login with a wrong password, attempt 3: 401 {"error":"Unauthorized"}
+POST /users/login with the correct password afterwards: 423 {"error":"Account locked, too many failed attempts. Please contact the administrator."}
+Expected: the account is locked; the correct password is rejected until an administrator unlocks it.

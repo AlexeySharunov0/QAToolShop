@@ -1,0 +1,9 @@
+TC-26 - catalogue list and product card disagree on availability
+
+State: clean seed, catalogue list requested once (cache warm), product card not requested before the order.
+Action: order 26 x "Washers" (seed stock 25), wait for the queued inventory job.
+Observed:
+  stock in database: -1
+  GET /products/{id} (product card): in_stock = false
+  GET /products?q=Washers (list, served from the 300 s cache): in_stock = true
+Expected: both endpoints report the same availability.
