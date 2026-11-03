@@ -1,0 +1,23 @@
+# Dependencies
+node_modules/
+.npm-cache/
+.pnpm-store/
+
+# Local environment (real credentials never leave the machine)
+.env
+.env.local
+
+# Playwright working directories. reports/ is committed on purpose: it is a
+# required deliverable of the assignment.
+test-results/
+blob-report/
+playwright-report/
+.report-tmp/
+reports/.tmp/
+
+# OS / editor noise
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
